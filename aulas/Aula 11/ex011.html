@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Nacionaliade</title>
+
+    <style>
+        body {
+            font: normal 1.3em Arial;
+        }
+        strong{
+            color: rgb(131, 2, 2);
+        }
+        .input{
+            font-size: 1em;
+        }
+        div#res{
+            border: solid 2px black;
+            width: 20%;
+            height: 20%;
+            text-align: center;
+            line-height: 150px;
+            margin-top: 20px;
+            background-color: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Brasileiro ou não</h1>
+    Seu pais natal é: <input type="text" name="txtp" id="txtp" class = 'input'>
+    <input type="button" value="Validar" onclick="Testar()" class = 'input'>
+    <div id='res'>Validando..</div>
+
+    <script>
+
+        function Testar() {
+            var pais = document.getElementById('txtp').value
+            var res = document.querySelector('div#res')
+            res.innerHTML = `<p>Morando em <strong>${pais}</strong>.</p>`
+
+            if (pais == 'Brasil') {
+                res.innerHTML += '<p> Você é <strong>Brasileiro</strong>!</p>'
+            } else {
+                res.innerHTML += '<p> Você é <strong>Estrangeiro</strong></p>'
+            }
+        }
+
+    </script>
+</body>
+
+</html>
